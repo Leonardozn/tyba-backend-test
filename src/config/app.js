@@ -1,0 +1,13 @@
+const MONGO_HOST = process.env.MONGO_HOST
+const MONGO_PORT = process.env.MONGO_PORT
+const MONGO_DATABASE = process.env.MONGO_DATABASE
+const ACCESS_TOKEN_SECRET = process.env.ACCESS_TOKEN_SECRET
+const REFRESH_TOKEN_SECRET = process.env.REFRESH_TOKEN_SECRET
+
+module.exports = {
+    MONGO_HOST,
+    MONGO_PORT,
+    MONGO_DATABASE,
+    ACCESS_TOKEN_SECRET,
+    REFRESH_TOKEN_SECRET
+}

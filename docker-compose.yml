@@ -1,0 +1,16 @@
+version: "3"
+
+networks:
+  default:
+    external:
+      name: webd
+
+services:
+  backend:
+    container_name: back-reservation
+    restart: always
+    build: .
+    # ports:
+    #   - 8300:8300
+    volumes:
+      - .:/usr/src/app
