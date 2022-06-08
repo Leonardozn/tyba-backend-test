@@ -10,7 +10,7 @@ services:
     container_name: back-reservation
     restart: always
     build: .
-    # ports:
-    #   - 8300:8300
+    ports:
+      - 8300:8300
     volumes:
       - .:/usr/src/app
