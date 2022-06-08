@@ -13,7 +13,7 @@ async function session(req, res, next) {
             jwt.verify(token, config.ACCESS_TOKEN_SECRET, async (err, decode) => {
                 if (err) return res.status(401).send({message: 'Invalid token'})
                 
-                const user = await User.findOne({ email: 'email@company.com' }).populate({ path: 'role', select: '-__v' })
+                const user = await User.findOne({ email: decode.email }).populate({ path: 'role', select: '-__v' })
                 if (req.path.indexOf(user.view.role.permissions) > -1) {
                     try {
                         let transaction = await Transaction.findOne({ user: user._id })
